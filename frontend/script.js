@@ -1,8 +1,10 @@
 const input = document.querySelector('#input');
 const chatContainer = document.querySelector('#chat-container');
+const askBtn = document.querySelector('#ask');
 
 
 input.addEventListener('keyup', handleEnter);
+askBtn.addEventListener('click', handleAsk);
 
 
 // Text genrate function
@@ -17,6 +19,15 @@ function genrate(text){
     msg.textContent = text;
     chatContainer.appendChild(msg);
     input.value = '';
+}
+
+// askBtn click
+function handleAsk(e){
+    const text = input.value.trim();
+    if(!text){
+        return;
+    };
+    genrate(text);
 }
 // handleEnter function
 function handleEnter(e){
