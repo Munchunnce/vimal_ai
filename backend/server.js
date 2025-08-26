@@ -1,9 +1,10 @@
 import express from 'express';
 import { generate } from './chatbot.js';
-
+import cors from 'cors';
 
 const app = express();
 app.use(express.json()); // This is a middleware.
+app.use(cors());
 const port = 3001;
 
 app.get('/', (req, res) => {
