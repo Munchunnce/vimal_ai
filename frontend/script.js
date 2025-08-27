@@ -6,6 +6,11 @@ const askBtn = document.querySelector('#ask');
 input.addEventListener('keyup', handleEnter);
 askBtn.addEventListener('click', handleAsk);
 
+// create loading state
+const loading = document.createElement('div');
+loading.className = 'my-6 animate-pulse';
+loading.textContent = 'Searching the web...';
+
 
 // Text genrate function
 async function genrate(text){
@@ -20,12 +25,16 @@ async function genrate(text){
     msg.textContent = text;
     chatContainer.appendChild(msg);
     input.value = '';
+    // adding loding state
+    chatContainer.appendChild(loading);
 
     // Call Server
     const assistantMessage = await callServer(text);
     const assistantMsgElement = document.createElement('div');
     assistantMsgElement.className = `max-w-fit`;
     assistantMsgElement.textContent = assistantMessage;
+    // remove loding state text
+    loading.remove();
     chatContainer.appendChild(assistantMsgElement);
 }
 
