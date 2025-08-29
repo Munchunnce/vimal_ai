@@ -68,7 +68,8 @@ async function handleAsk(e){
 }
 // handleEnter function
 async function handleEnter(e){
-    if(e.key === 'Enter'){
+    if(e.key === 'Enter' && !e.shiftKey){
+        e.preventDefault();
         const text = input.value.trim();
         if(!text){
             return;
