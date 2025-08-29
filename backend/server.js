@@ -12,10 +12,15 @@ app.get('/', (req, res) => {
 })
 
 app.post('/chat', async (req, res) => {
-    const { message } = req.body; // req.body se data get kar rhe hai mujhe app.use(express.json())
+    const { message, threadId } = req.body; // req.body se data get kar rhe hai mujhe app.use(express.json())
+
+    if(!message || !threadId){
+      res.status(400).json({ message: 'All feilds are required!' });
+      return;
+    }
     console.log('Message', message);
 
-    const result = await generate(message);
+    const result = await generate(message, threadId);
     res.json({ message: result });
 })
 
