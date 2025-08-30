@@ -42,7 +42,7 @@ async function genrate(text){
 
 // server call api
 async function callServer(inputText){
-    const response = await fetch('http://localhost:3001/chat', {
+    const response = await fetch('https://vimal-ai-server.vercel.app', {
         method: 'POST',
         headers: {
             'content-type': 'application/json',
