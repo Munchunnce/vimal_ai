@@ -24,6 +24,8 @@ app.post('/chat', async (req, res) => {
     res.json({ message: result });
 })
 
-app.listen(port, () => {
-  console.log(`Server is running on port: ${port}`)
-})
+// app.listen(port, () => {
+//   console.log(`Server is running on port: ${port}`)
+// })
+
+export default app;
