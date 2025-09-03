@@ -33,7 +33,7 @@ async function main() {
     messages.push({
       role: 'user',
       content: question,
-    })
+    });
 
     while (true) {
       const completions = await groq.chat.completions.create({
@@ -87,7 +87,7 @@ async function main() {
             content: toolResult,
           });
         }
-      }
+      };
 
       // second tool call
       // const completions2 = await groq.chat.completions.create({
@@ -134,4 +134,4 @@ async function webSearch({ query }) {
     .join("\n\n");
 
   return finalResult;
-}
+};
