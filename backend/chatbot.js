@@ -98,7 +98,7 @@ export async function generate(userMessage, threadId) {
     messages.push({
       role: 'user',
       content: userMessage,
-    })
+    });
     const MAX_RETRIES = 10;
     let count = 0;
     while (true) {
@@ -189,7 +189,7 @@ export async function generate(userMessage, threadId) {
       // console.log(JSON.stringify(completions2.choices[0].message.content, null, 2));
     }
   
-}
+};
 
 
 
@@ -204,4 +204,4 @@ async function webSearch({ query }) {
     .join("\n\n");
 
   return finalResult;
-}
+};
