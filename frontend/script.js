@@ -21,6 +21,7 @@ async function genrate(text){
      * 2. Send it to LLM
      * 3. Append response to UI
      */
+    
     // <div class="max-w-fit">hello, I am Assistant. How can i help you?</div>
     const msg = document.createElement('div');
     msg.className = `my-6 rounded-xl bg-neutral-800 p-3 ml-auto max-w-fit`;
