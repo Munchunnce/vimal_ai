@@ -67,6 +67,7 @@ async function handleAsk(e){
     };
     await genrate(text);
 }
+
 // handleEnter function
 async function handleEnter(e){
     if(e.key === 'Enter' && !e.shiftKey){
