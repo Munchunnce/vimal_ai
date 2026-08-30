@@ -13,6 +13,7 @@ const loading = document.createElement('div');
 loading.className = 'my-6 animate-pulse';
 loading.textContent = 'Searching the web...';
 
+
 // Text genrate function
 async function genrate(text){
     /**
